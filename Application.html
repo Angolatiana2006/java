@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TP JavaScript-1</title>
+</head>
+<body>
+    <h1>EXO 1</h1>
+    <input id="name" type="text" name="nom" placeholder="Tapez votre nom">
+    <button id="btn" onclick="affichage()">Valider</button>
+    <p><a href="exo2.html">EXO2</a></p>
+    <script>
+        {
+            function affichage(){
+                let formulaire = document.getElementById("name");
+                let nom = formulaire.value;
+                console.log(nom);
+
+                let nouveauParagraphe = document.createElement("p");
+                nouveauParagraphe.textContent = "Bonjour, " + nom;
+                console.log(nouveauParagraphe.innerText);
+                document.getElementById("btn").insertAdjacentElement("afterend",nouveauParagraphe);
+            }
+            
+        }
+    </script>
+</body>
+</html>
