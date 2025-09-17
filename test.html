@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TP2 DOM</title>
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="#">Accueil</a></li>
+                <li><a href="#">Cours</a></li>
+                <li><a href="#">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <h2 class="section-title">Articles recents</h2>
+        <article>
+            <h3>Article 1</h3>
+            <p>Texte de l'article 1</p>
+        </article>
+        <article>
+            <h3>Article 2</h3>
+            <p>Texte de l'article 2</p>
+        </article>
+    </main>
+
+    <footer>
+        <p><a href="index.html">Retour</a></p>
+    </footer>
+    <script>
+        {
+            //selectionner titre de section
+            const titreSelection = document.getElementsByClassName("section-title");
+            console.log(titreSelection[0].innerText);
+        }
+        {
+            //selectionner tous liens du menu navigation
+            const menuNavigation = document.getElementsByTagName("li");
+            console.log(menuNavigation[0].innerText);
+            console.log(menuNavigation[1].innerText);
+            console.log(menuNavigation[2].innerText);
+        }
+        {
+            //selectionner 2e article et afficher son titre
+            const recupArt2 = document.getElementsByTagName("article");
+            const art2 = recupArt2[1];
+            const recupTitreArt2 = art2.getElementsByTagName("h3");
+            console.log(recupTitreArt2[0].innerText);
+        }
+        {
+            //selectionner  tous les paragraphes des articles
+            const recupArt = document.getElementsByTagName("article");
+            const recupArt1 = recupArt[0];
+            const recupContentArt1 = recupArt1.getElementsByTagName("p");
+            const recupArt2 = recupArt[1];
+            const recupContentArt2 = recupArt2.getElementsByTagName("p");
+            console.log(recupContentArt1[0].innerText);
+            console.log(recupContentArt2[0].innerText);
+        }
+    </script>
+</body>
+</html>
