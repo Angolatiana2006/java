@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TP3</title>
+    <style>
+        .rouge { color: red; }
+        .vert { color: green; font-weight: bold; }
+    </style>
+</head>
+<body>
+    <h1 id="titre">Titre original</h1>
+    <p id="paragraphe">Ceci est un paragraphe</p>
+    <a id="lien" href="#">Lien par defaut</a>
+    <button id="btn" onclick="modification()">Cliquez-moi</button>
+    <a href="Application.html">03_TP JavaScript </a>
+
+    <script>
+        {
+            
+            function modification(){
+                //changer h1
+                let nouvTitre = document.getElementById("titre");
+                nouvTitre.textContent = "Titre modifie avec JavaScript";
+                console.log(nouvTitre.innerText);
+                
+                //modifier paragraphe
+                let paragraphe = document.getElementsByTagName("p");
+                paragraphe[0].style.color="blue";
+                paragraphe[0].style.fontSize="20px";
+                console.log(paragraphe[0].innerText);
+
+                //modifier lien
+                let lien = document.getElementById("lien");
+                lien.href ="https://www.google.com";
+                lien.textContent="Aller sur google";
+                console.log(lien.innerText);
+
+                //ajouter classe
+                let classe = document.getElementById("paragraphe");
+                paragraphe[0].classList.add("rouge");
+            }
+            
+        }
+    </script>
+</body>
+</html>
