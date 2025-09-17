@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EXO3</title>
+</head>
+<body>
+    <input id="number" type="number" name="nombre" placeholder="Tapez un nombre">
+    <button id="btn" onclick="multiplication()">Valider</button>
+    <script>
+        {
+            function multiplication(){
+                let formulaire = document.getElementById("number");
+                let nombre = formulaire.value;
+                console.log(nombre);
+
+
+                let table = document.createElement("table");
+                document.getElementById("btn").insertAdjacentElement("afterend",table);
+                console.log(table); 
+                let listesNbr = [0,1,2,3,4,5,6,7,8,9,10];
+                for(let i=0; i < listesNbr.length; i++){
+                    let tr = document.createElement("tr");
+                    let td1 = document.createElement("td");
+                    td1.textContent = nombre;
+                    let td2 = document.createElement("td");
+                    td2.textContent = "x";
+                     let td3 = document.createElement("td");
+                    td3.textContent = listesNbr[i];
+                    let td4 = document.createElement("td");
+                    td4.textContent = "=";
+
+                    let valiny = document.createElement("td");
+                    valiny.textContent = nombre * listesNbr[i];
+                    
+                    tr.appendChild(td1);
+                    tr.appendChild(td2);          
+                    tr.appendChild(td3);
+                     tr.appendChild(td4);   
+                    tr.appendChild(valiny);       
+                    table.appendChild(tr);
+
+                    
+                    console.log(valiny);
+                }
+
+               
+            
+                
+            }
+        }
+    </script>
+</body>
+</html>
