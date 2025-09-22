@@ -1,0 +1,16 @@
+1)creer liste deroulante (OK)
+2)creer bouton valider (OK)
+3)script:
+creer tab1: items (OK)
+creer tb2: prix (OK)
+selectionner btn dia asina eventListner (OK)
+recuperer valeur, vider apres entrer (OK)
+creer li, contenue le selectionner (OK)
+creer span (OK)
+
+4)calcul prix total items
+recuperer liste
+recuperer valeur prix
+recuperer taille liste: byTagName
+boucle jusqu a taille liste
+sommer valeur

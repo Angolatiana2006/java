@@ -3,42 +3,62 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>TP1 Dom</title>
-    
+    <title>TP Javascript-2</title>
 </head>
 <body>
-    <h1 id="titre">Bienvenue sur mon site</h1>
-    <p class="intro">Ceci est une introduction.</p>
-    <p class="intro">Deuxieme paragraphe d'introduction.</p>
-
-    <div>
-        <p>Paragraphe dans une div</p>
-        <a href="test.html">suivant</a>
-    </div>
+    <select id="item" name="item">
+        <option value="briquet">Briquet</option>
+        <option value="ciseau">Ciseau</option>
+        <option value="allumettes">Allumettes</option>
+        <option value="chiffon">Chiffon</option>
+    </select>
+    <button id="btn">Valider</button>
 
     <script>
-        {
-            //selectionner titre par id
-            const titre = document.getElementById("titre");
-            console.log(titre.innerText);
-        }
+        //creer tab1
+        const nomItem = ['briquet','ciseau','allumettes','chiffon'];
 
-        {
-            //selectionner paragraphes classe intro
-            const ps = document.getElementsByClassName("intro");
-            console.log(ps[0].innerText);
-            console.log(ps[1].innerText);
+        //creer tab2
+        const prixItem = ['1000','2000','500','1000'];
+
+        //selectionner bouton
+        const selectBtn = document.getElementById("btn");
+
+        //action du bouton
+        selectBtn.addEventListener('click', () => {
+        const selectItem = document.getElementById("item");
+        const item = selectItem.value;
+        console.log(item);
+
+        const listUl = document.createElement("ul");
+        document.getElementById("btn").insertAdjacentElement("afterend",listUl);
+        
+        //contenue span
+        for(let i=0; i<prixItem.length; i++){
+            if(nomItem[i] == item){
+        const prix = "prix: " + prixItem[i];
+        const listItem = document.createElement('li');
+        const listText = document.createElement('span');
+        listItem.appendChild(listText);
+        listText.textContent = item + " " + prix + " " + "Ar";
+        console.log(listText.innerText);
+        listUl.appendChild(listItem);
+        
+
+        //recuperer prix
+        const recuPrix = listText.textContent.split(" ");
+        const valeur = recuPrix[2];
+        console.log(valeur);
+
+        //somme
+        const ul = document.getElementsByTagName("ul");
+        console.log(ul);
+        const h1 = document.createElement("h1");
+        h1.textContent = "Total items: ";
+            }
         }
-        {
-            //selectionner premier paragraphe avec querySelector
-            const p1 = document.querySelector("p");
-            console.log(p1.innerText);
-        }
-        {
-            //selectionner tous les paragraphes et afficher nombre total
-            const tps = document.getElementsByTagName("p");
-            console.log(tps.length);
-        }
+        
+        } )
     </script>
 </body>
 </html>
